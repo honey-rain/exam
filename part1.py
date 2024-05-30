@@ -7,7 +7,8 @@ token = "we87fwR4Tf3287w67"
 params = {'token': token}
 
 response = requests.get(url, params=params)
-
+with open('data.tar.gz',"wb" ) as f:
+    f.write(response.content)
 if response.status_code == 200:
     data = response.json()
   
